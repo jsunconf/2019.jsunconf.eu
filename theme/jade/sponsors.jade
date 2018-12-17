@@ -1,0 +1,36 @@
+extends _layout
+
+block main
+  section.section.sponsor-headline
+    header.section__header
+      h1 !{title}
+    if exerpt
+      p.exerpt !{exerpt}
+
+    if contents
+      .section__content !{contents}
+
+block sponsors
+  section.section.sponsor-content
+    each level in ['Gold', 'Silver', 'Bronze']
+      - var levelSponsors = sponsors.filter(sponsor => sponsor.level === level);
+
+      if levelSponsors && levelSponsors.length > 0
+        .sponsors__level
+          h2.sponsors__level__name= level
+          each sponsor in levelSponsors
+            - var url = sponsor.url.replace(/^http[s]?:\/\/(www\.)?/, '').replace(/\/$/, '')
+            .sponsor(class="sponsor--"+level)
+              .sponsor__logo
+                a(href=sponsor.url, title=sponsor.name, target="_blank", class="sponsor__logo--"+level)
+                  img.sponsor__logo__image(src="/images/sponsors/"+sponsor.image, alt=sponsor.name)
+              .sponsor__meta
+                - var hasTwitter = !!sponsor.twitter;
+                if hasTwitter
+                  a.sponsor__meta__info(href="https://twitter.com/"+sponsor.twitter, title=sponsor.name, target="_blank")= sponsor.twitter
+                else
+                  a.sponsor__meta__info(href=sponsor.socialmedia, title=sponsor.name, target="_blank")
+                    | On Social Media
+                ||
+                a.sponsor__meta__info(href=sponsor.url, title=sponsor.name, target="_blank")= sponsor.name
+              .sponsor__description!= sponsor.description

@@ -1,0 +1,52 @@
+{
+  "name": "2019.jsunconf.eu",
+  "version": "0.0.1",
+  "description": "The 5th edition of the JSUnconf website",
+  "main": "index.js",
+  "dependencies": {
+    "ajv": "^6.4.0",
+    "ajv-keywords": "^3.2.0",
+    "eslint": "^4.19.1"
+  },
+  "devDependencies": {
+    "handlebars": "^4.0.11",
+    "light-server": "^2.5.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-assets": "^0.1.0",
+    "metalsmith-browser-sync": "^1.1.1",
+    "metalsmith-collections": "^0.9.0",
+    "metalsmith-feed": "^1.0.0",
+    "metalsmith-html-minifier": "^3.0.0",
+    "metalsmith-in-place": "^4.1.1",
+    "metalsmith-layouts": "^2.1.0",
+    "metalsmith-mapsite": "^1.0.4",
+    "metalsmith-markdown": "^0.2.2",
+    "metalsmith-metadata": "0.0.4",
+    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-publish": "^0.1.5",
+    "metalsmith-stylus": "^3.0.0",
+    "metalsmith-templates": "^0.7.0",
+    "metalsmith-word-count": "0.0.4",
+    "moment": "^2.22.1",
+    "subfont": "^3.2.2",
+    "then-jade": "^2.4.3"
+  },
+  "scripts": {
+    "start": "npm run clean && npm run build && npm run server",
+    "clean": "rm -rf build",
+    "server": "light-server -s ./docs/ -p 8080 -w 'theme/**/*, content/**/* # npm run build'",
+    "build": "metalsmith",
+    "postbuild": "subfont docs -i --inline-css",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsunconf/2019.jsunconf.eu.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsunconf/2019.jsunconf.eu/issues"
+  },
+  "homepage": "https://2019.jsunconf.eu"
+}

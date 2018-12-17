@@ -1,0 +1,13 @@
+extends _layout
+
+block main
+  section.section.contriboot-headline
+    header.section__header
+      h1 !{title}
+      if exerpt
+        p.exerpt !{exerpt}
+
+  section.section.section__content
+    .mount
+
+  script(src="/scripts/contriboot.js")
