@@ -1,4 +1,4 @@
 ---
-template: index.jade
+layout: index.pug
 bodyClass: index
 ---
