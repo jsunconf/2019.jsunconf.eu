@@ -13,8 +13,9 @@
     "metalsmith-permalinks": {
       "pattern": ":url"
     },
-    "metalsmith-templates": {
-      "engine": "jade",
+    "metalsmith-layouts": {
+      "pattern": "**/*.html",
+      "default": "index.pug",
       "directory": "theme/jade"
     },
     "metalsmith-assets": {
