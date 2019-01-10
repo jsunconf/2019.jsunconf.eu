@@ -1,5 +1,5 @@
 ---
-template: simple.jade
+layout: simple.pug
 title: Tips and Sightseeing for your trip to Hamburg
 exerpt: First time visiting Hamburg? Having some days left before or after JSUnconf?
 ---
