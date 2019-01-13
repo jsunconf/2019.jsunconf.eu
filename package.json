@@ -28,7 +28,7 @@
     "metalsmith-stylus": "^3.0.0",
     "metalsmith-word-count": "0.0.4",
     "moment": "^2.22.1",
-    "subfont": "^3.2.2"
+    "subfont": "^3.6.2"
   },
   "scripts": {
     "start": "npm run clean && npm run build && npm run server",
