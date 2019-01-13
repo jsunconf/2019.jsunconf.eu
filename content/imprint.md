@@ -1,5 +1,5 @@
 ---
-template: simple.jade
+layout: simple.pug
 title: JSUnconf Imprint
 exerpt:
 
