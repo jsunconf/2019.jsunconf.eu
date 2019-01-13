@@ -1,48 +1,24 @@
 .section
-  background-color $backgroundColor
-  color white
-  padding 2.75rem 15vw 2.75rem 15vw
+  padding-top: 6vh
+  padding-right: 20vw
+  padding-bottom: 12vh
+  padding-left: 20vw
 
-  &:nth-child(2n+1)
-    background-color white
-    color $backgroundColor
-    a,
-    .section__call-to-action .button
-      color $backgroundColor
+.less-bottom-padding
+  padding-bottom: 6vh
 
-.section__content
-  padding-bottom 3rem
+.image-section
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 100%
+  min-height: 50vh
+  background-image: linear-gradient($jsuLogoColorRgba, $jsuLogoColorRgba), url(https://drive.google.com/uc?export=view&id=1-o9_BBqI2H-srXW0RFrfOPnpBn5P21lA)
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  overflow: hidden
 
-.section__header,
-.section__content
-  text-align center
-
-.section.section--sponsors
-  background-color var(--dark-plum)
-  color white
-
-.section__call-to-action
-  text-align center
-
-a,
-.section__call-to-action .button
-  color white
-
-.sponsors-button
-  color white !important
-  font-size 1.5rem
-
-.button
-  font-size: 1.5rem
-
-@media screen and (max-width: 2000px)
-  .section
-    padding 4.75rem 20vw
-
-@media screen and (max-width: 1000px)
-  .section
-    padding 3.75rem 15vw
-
-@media screen and (max-width: 600px)
-  .section
-    padding 2.75rem 15vw
+// .section--map
+//   border: 1px solid red
