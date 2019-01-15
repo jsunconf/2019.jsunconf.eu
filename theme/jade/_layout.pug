@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 html
   head
 
@@ -41,12 +42,13 @@ html
     link(href='https://fonts.googleapis.com/css?family=Press+Start+2P|Source+Code+Pro:200,300,400,500,600,700,900|Gochi+Hand|Handlee|Just+Another+Hand|Patrick+Hand|Patrick+Hand+SC' rel='stylesheet')
 
   body(class=bodyClass + ' grid-01')
+    block header
 
     .main-content
       block main
 
       block sponsors
-        include _sponsors
+        //- include _sponsors
 
       block footer
         include _footer

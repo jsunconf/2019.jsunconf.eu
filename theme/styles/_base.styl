@@ -1,5 +1,6 @@
 html
-  font-size: 100%
+  width: 100%;
+  height: 100%;
 
 body
   height: 100vh
@@ -50,9 +51,6 @@ hr
   height: 1px
   // background: var(--bb-separator-line) ???
 
-a
-  font-weight: bold
-
 a:hover,
 a:focus
   text-decoration: none
@@ -101,12 +99,15 @@ a:focus
   margin: 20px 0
   text-decoration: none
   font-weight: 600
+  overflow: hidden
+  position: relative
+  z-index: 0
 
 .button:hover,
 .button-tickets:hover,
 .button:focus,
 .button-tickets:focus
-  background-color: var(--jsu-purple-dark)
+  background-color: $jsuPurpleDark
   text-transform: uppercase
 
 .onimage
@@ -118,6 +119,7 @@ a:focus
   grid-template-rows: 80px auto
   grid-template-areas: "header" "main-content"
   grid-gap: 0
+  overflow-x: hidden
 
 .jsunconflogo
   display: inline-block
@@ -134,27 +136,3 @@ a:focus
   padding: 0
   margin: 0
   overflow: auto
-
-@media screen and (max-width: 2000px)
-  h1, h2 .main-header__supertitle
-      font-size: 5rem
-      line-height: 1.5em
-  h2
-    font-size: 3.5rem
-    line-height: 1.25em
-
-@media screen and (max-width: 1000px)
-  h1, h2 .main-header__supertitle
-      font-size: 4rem
-      line-height: 1.5em
-  h2
-    font-size: 2.5rem
-    line-height: 1.5em
-
-@media screen and (max-width: 600px)
-  h1, h2 .main-header__supertitle
-      font-size: 3rem
-      line-height: 1.25em
-  h2
-    font-size: 2rem
-    line-height: 1.5em
