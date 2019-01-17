@@ -1,45 +1,28 @@
-.main-header
-  // padding-left: 20px
-  // padding-right: 20px
-  display: flex
-  flex-direction: column
-  align-items: center
-  height: 85.5vh
-  width: 100%
-  background: linear-gradient(29deg, var(--darkish-purple-alpha), rgba(11, 102, 178, 0.75) 85%, var(--ocean-blue-alpha)), url("/images/background.jpg")
-  // background: linear-gradient(72deg, #911c80, #0b66b2 85%, #0669b4), linear-gradient(72deg, var(--darkish-purple-alpha), #0b66b2 85%, var(--ocean-blue-alpha)), url("/images/background.jpg")
-  background-size: cover
-  background-position: center
-  justify-content: flex-end
+.header
+  grid-area: header
+  overflow: hidden
+  background-color: $jsuLogoColor
 
-
-.main-header__logo
-  text-align: center
-  padding: 2rem 0.5rem
+.headnav-list
+  height: 100%
   margin: 0
-
-.main-header__logo__image
-  width: 66%
-
-.main-header__tagline
-  padding: 1rem
-  margin-top: 0
-
-.main-header__supertitle
-  font-weight: bold
-  font-size: 3rem
-  line-height: 3.5rem
-  display: block
-  margin: 0 0 0.5rem 0
   padding: 0
 
-.main-header__title
-  font-weight: bold
-  display: block
+.headnav-list-item
+  display: inline-flex
+  justify-content: center
+  align-items: center
+  font-family: 'Gochi Hand', cursive
+  font-size: 1.33rem
+  color: $jsuFontColorOnimage
+  height: 100%
+  padding: 0 1vw 0 1vw
 
-.main-header__subtitle
-  font-weight: bold
-  display: block
+.headnav-list-link
+  text-decoration: none
+  color: $jsuFontColorOnimage
 
-.emoji-font
-  font-family: monospace
+  &:hover,
+  &:focus
+    text-decoration: underline;
+    text-transform: none;
