@@ -102,7 +102,6 @@ hr {
 a:hover,
 a:focus {
   text-decoration: none;
-  text-transform: uppercase;
 }
 .link-deactivated {
   opacity: 0.5;
@@ -156,7 +155,6 @@ a:focus {
 .button:focus,
 .button-tickets:focus {
   background-color: #46003c;
-  text-transform: uppercase;
 }
 .onimage {
   color: #fff;
