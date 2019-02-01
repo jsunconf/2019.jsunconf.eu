@@ -181,7 +181,8 @@ a:focus {
   grid-area: main-content;
   padding: 0;
   margin: 0;
-  overflow: auto;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 .header {
   grid-area: header;
