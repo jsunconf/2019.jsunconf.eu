@@ -32,9 +32,10 @@
   "scripts": {
     "start": "npm run clean && npm run build && npm run server",
     "clean": "rm -rf build",
-    "server": "light-server -s ./docs/ -p 8080 -w 'theme/**/*, content/**/* # npm run build'",
+    "server": "light-server -s ./dist/ -p 8080 -w 'theme/**/*, content/**/* # npm run build'",
     "build": "metalsmith",
-    "postbuild": "subfont docs -i --inline-css",
+    "build:prod": "npm run clean && NODE_ENV=production npm run build",
+    "postbuild:prod": "subfont dist -i --inline-css",
     "test": ""
   },
   "repository": {

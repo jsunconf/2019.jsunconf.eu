@@ -28,4 +28,4 @@ npm run build
 
 ## Deploy
 
-The site will be served from the docs folder via Github Pages.
+The site will be served from the `./dist` folder via Netlify.
