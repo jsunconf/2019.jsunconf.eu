@@ -30,12 +30,15 @@
     "subfont": "^3.6.2"
   },
   "scripts": {
-    "start": "npm run clean && npm run build && npm run server",
-    "clean": "rm -rf build",
+    "start": "npm run build && npm run server",
+    "clean": "rm -rf ./dist",
     "server": "light-server -s ./dist/ -p 8080 -w 'theme/**/*, content/**/* # npm run build'",
+    "prebuild": "npm run clean",
     "build": "metalsmith",
-    "build:prod": "npm run clean && NODE_ENV=production npm run build",
-    "postbuild:prod": "subfont dist -i --inline-css",
+    "build:prod": "NODE_ENV=production npm run build",
+    "postbuild:prod": "npm run subfont && npm run move-404",
+    "subfont": "subfont dist -i --inline-css",
+    "move-404": "cp ./dist/404/index.html ./dist/404.html && rm -rf ./dist/404",
     "test": ""
   },
   "repository": {
