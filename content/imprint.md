@@ -5,9 +5,13 @@ exerpt:
 
 ---
 
-This conference is proudly presented to you by
+This conference is proudly presented to you by the team:
 
-[Tina Umlandt](https://twitter.com/tu404), [Robert Kowalski](https://twitter.com/robinson_k), [Patty Chaupis](https://twitter.com/chaupois) and [Stefan Schulte](https://twitter.com/schubidu)
+[Tina Umlandt](https://twitter.com/tu404),
+[Arnd Issler](https://twitter.com/arndissler),
+[Emanuel Kluge](https://twitter.com/herschel_r),
+[Jonas Schmidt](https://twitter.com/JonasASchmidt), and
+[Tobias Struckmeier](https://twitter.com/tobmaster)
 
 <br><br>
 Design by [Jonas Schmidt](https://twitter.com/JonasASchmidt)
