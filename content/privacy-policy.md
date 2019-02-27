@@ -119,11 +119,11 @@ You will find links to other websites on this website, directly or indirectly by
 
 We hereby expressly distance ourselves from all contents of these sites to which links are established and do not adopt these contents as our own. We do not have any influence on changes of the linked content. Our website may contain links to other providers’ websites, which are not covered by this data protection policy. To the extent that the use of websites of other providers involves the capture, processing and use of personal data, please refer to the data protection policy of the relevant provider.
 
-### Google Maps
-Our website uses the map service Google Maps via an API. The provider is Google Inc, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. To use the functions of Google Maps it is necessary to save your IP address. This information is usually transferred to a Google server in the USA and stored there. The provider of this site has no influence on this data transmission. The use of Google Maps is in the interest of an appealing representation of our online offers and at an easy findability of the places indicated by us on the web page.
+### Mapbox
+The website of JSunconf uses the Mapbox map service via an API. This service is operated by Mapbox Inc., 740 15th Street NW, 5th Floor, Washington DC 20005.
 
-You can find more information on the handling of user data in Google’s data protection declaration: https://policies.google.com/privacy
+In order to fulfil its service, Mapbox may collect the following data (see [https://www.mapbox.com/privacy/#[AaMSWwdt]](https://www.mapbox.com/privacy/#[AaMSWwdt]) for more details and a full list): your IP address, device and browser information, operating system of your device, the content of the request, the date and time of the request, and limited location and usage data. The JSUnconf team has no influence on this data transfer, and what data Mapbox will collect.
 
-Google is certified under the Privacy Shield Agreement and thus offers a guarantee of compliance with the European data protection law (https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&status=Active).
+The use of Mapbox is in the interest of making it easier for our attendees and interesting people to get an overview where the JSunconf takes place (the event itself and the attached sub-events "warm up party" and "saturday night party". This constitutes a justified interest pursuant to Art. 6 para. 1 lit. f) GDPR.
 
-Version: May 2018
+Further information about what data Mapbox collect and process and how long they store it, can be found in the data protection declaration of Mapbox at https://www.mapbox.com/privacy/.
