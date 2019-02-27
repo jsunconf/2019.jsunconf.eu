@@ -113,54 +113,6 @@ Cookies, which are necessary for the execution of the electronic communication p
 
 Our cookies remain on your computer for a certain period of time enabling our cloud provider to recognize your computer behind a shared IP-address space on the basis of the logged data (visit to our website including date and time, browser type, operating system) in order to provide end user security.
 
-## NEWSLETTER
-With the following information we inform you about the contents of our newsletter as well as the registration, dispatch and statistical evaluation procedures as well as your right of objection. By subscribing to our newsletter, you agree to the receipt and the procedures described.
-
-The legal basis for sending our newsletter is your consent via double opt-in according to Art. 6 para. 1 lit. a GDPR.
-
-### Newsletter Content
-We send newsletters and e-mails containing promotional information (hereinafter referred to as “Newsletter”) only with the consent of the recipient. Provided that in the context of a registration to the newsletter whose contents are specifically described, they are decisive for the consent of the users. In our newsletters we inform you periodically about the JSUnconf programme announcements, discounted ticket/hotel/travel offers and further events by email.
-
-### Use of “MailChimp” shipping service provider
-We use MailChimp to send our newsletter to our subscribers. MailChimp is a service provided by The Rocket Science Group, LLC, 512 Means Street, Suite 404, Atlanta, GA 30318, USA.
-
-The email addresses of our newsletter recipients, as well as any other information described in this notice, are stored on the servers of MailChimp in the USA. MailChimp uses this information for sending and to evaluate the newsletters on our behalf. Furthermore, MailChimp can use its own information to check these Use data to optimize or improve your own services, e.g. to technically optimize shipping and the presentation of the newsletter or for economic purposes, in order to determine from which countries the recipients come.
-
-The data stored when you registered for the newsletter (E-mail address, name, IP address, and time and date of registration) will be sent to a server operated by The Rocket Science Group in the United States and stored there in accordance with the EU-US Privacy Shield. MailChimp uses this information for sending and to evaluate the newsletters on our behalf. Furthermore, MailChimp can use its own information to check these Use data to optimize or improve your own services, e.g. to technically optimize shipping and the presentation of the newsletter or for economic purposes, in order to determine from which countries the recipients come. However, MailChimp does not use the data of our newsletter recipients to write them down itself or to send them back to us.
-
-We trust in the reliability and IT and data security of MailChimp. MailChimp is protected under the US-EU Data Protection Agreement “Privacy Shield” and is thus committed to comply with EU data protection regulations. Furthermore, we have created with MailChimp a “Data Processing Agreement”. This is a contract, in which MailChimp is responsible for to protect the data of our users in accordance with their data protection regulations on our behalf and in particular not to pass them on to third parties. The data protection regulations of MailChimp can be viewed here.
-
-Further information about the data protection offered by MailChimp can be found at:
-
-https://mailchimp.com/legal/privacy/
-
-Further information about the EU-US Privacy Shield can be found at:
-
-Die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit
-
-https://ec.europa.eu/info/law/law-topic/data-protection_en
-
-### Double opt-in and logging
-The registration for our newsletter takes place in a so-called double opt-in procedure. This means that you will receive an e-mail after registration, in which you will be asked to confirm your registration. This confirmation is necessary so that no one can log on with foreign e-mail addresses. The registrations for the newsletter are recorded in order to be able to prove the registration process according to legal requirements. Therefore we store the login and the confirmation time, as well as the IP address. Also, the changes to your data stored with the shipping service provider (MailChimp) are logged.
-
-### Logon data
-To subscribe to the newsletter, it is sufficient to provide your e-mail address. Optionally, we ask you to give a name in the newsletter for personal address.
-
-### Newsletter Consent
-You will be asked to consent to the use of your personal data to receive our newsletter as follows:
-
-“By entering your e-mail address and clicking the button below, you confirm that you are 16 years or older. You agree that the JSUnconf EU will use the data and information provided by you in connection with the use of the newsletter to regularly send you information about the JSUnconf by e-mail. By clicking below, you agree that JSUnconf may process your information in accordance with these terms. You can change your mind at any time by clicking the unsubscribe link in the footer of any e-mail you receive from us, or by contacting us at contact@jsunconf.eu. JSUnconf will treat your information with respect. For further information, please see our privacy policy on our website.”
-
-### Statistical survey and analysis
-The newsletters contain a so-called “web-beacon”. A pixel-sized file retrieved from the server of the shipping service provider when the newsletter is opened. Within the framework of this call, technical information, such as information about the browser and your system, as well as your IP address and time of the call-up are collected. This information is used to technically improve the services based on the technical data or the target groups and their reading behavior by means of their polling points (which can be determined using the IP address) or the access times. Statistical surveys also include determining whether the newsletters are opened, when they are opened, and which links are clicked. This information can be assigned to individual newsletter recipients for technical reasons. It is, however, neither our endeavor, nor that of the shipping service provider, to observe individual users. The evaluations are much more useful for us to recognize the reading habits of our users and adapt our content to them or to send different content according to the interests of our users.
-
-### Cancellation / Revocation
-We may process your personal data until you revoke your consent. You can cancel the receipt of our newsletter at any time, i.e. revoke your consent. So that goes out at the same time your consents to its dispatch via MailChimp and the statistical analyses. A separate revocation of sending via MailChimp or the statistical evaluation is unfortunately not possible.
-
-A link to cancel the newsletter can be found at the end of each newsletter.
-
-For instructions to take this step, please refer to the confirmation e-mail and each newsletter.
-
 ## LINK TO THIRD PARTIES
 Embedding of external platforms
 You will find links to other websites on this website, directly or indirectly by means of links. The legal basis for such processing is our legitimate interest pursuant to Art. 6 para. 1 lit. f) GDPR. We may process your personal data until our legitimate interest ceases to exist.
