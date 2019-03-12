@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "jstransformer-pug": "^0.3.0",
-    "light-server": "^2.5.0",
+    "light-server": "^2.6.0",
     "metalsmith": "^2.3.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-browser-sync": "^1.1.1",
@@ -19,7 +19,7 @@
     "metalsmith-html-minifier": "^3.0.0",
     "metalsmith-in-place": "^4.1.1",
     "metalsmith-layouts": "^2.1.0",
-    "metalsmith-mapsite": "^1.0.4",
+    "metalsmith-mapsite": "^1.0.6",
     "metalsmith-markdown": "^0.2.2",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^0.5.0",
