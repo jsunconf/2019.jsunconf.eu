@@ -4,11 +4,17 @@ block header
   include index-partials/header
 
 block main
-  h1.title JSUnconf<br> 13. + 14.4.2019<br> Hamburg
+  .image-section(alt="View on the beautiful Hamburg port area with Elphie in sight, from the Michel, an ancient churches bell tower.", style="background-image:url(https://drive.google.com/uc?export=view&id=1_ZXN9GarjbaILX07CLuxZbKP87tcNXDj)")
+    a(href="index.html")
+      img(alt="JSUnconf logo graphic. Purple shape with white wordmark.",title="JSUnconf logo graphic. Purple shape with white wordmark.",src="/images/jsunconflogo.svg",width="100rem")
+    h1.onimage JSUnconf<br> 13. + 14.4.2019<br> Hamburg
 
-  include index-partials/tickets
+  include index-partials/description
+  //- include index-partials/schedule
   //- include index-partials/contriboot
+  include index-partials/tickets
   include index-partials/diversity
   include index-partials/code-of-conduct
   include index-partials/location
-  //- include index-partials/schedule
+  include index-partials/motto
+  
