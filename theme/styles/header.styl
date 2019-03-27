@@ -2,11 +2,23 @@
   grid-area: header
   overflow: hidden
   background-color: $jsuLogoColor
+  display: flex
+  align-items: center
+  justify-content: flex-end
+
+  @media screen and (min-width: 762px)
+    display: block
+    align-items: initial
+    justify-content: initial
 
 .headnav-list
   height: 100%
   margin: 0
   padding: 0
+  display: none
+
+  @media screen and (min-width: 762px)
+    display: block
 
 .headnav-list-item
   display: inline-flex
@@ -26,3 +38,63 @@
   &:focus
     text-decoration: underline;
     text-transform: none;
+
+.hamburger
+  // TODO: add Autoprefixer
+  position relative
+  -webkit-appearance: none
+  background: none
+  border: none
+  padding: 0
+  margin-right: 1rem
+  text-align: center
+  cursor: pointer
+  transition: opacity 300ms ease-in-out
+
+  &:hover,
+  &:focus
+    opacity: 0.75
+
+  @media screen and (min-width: 762px)
+    display: none
+
+.hamburger-icon
+  top: 10px
+
+  &,
+  &:before,
+  &:after
+    display: block
+    height: 4px
+    position absolute
+    left: 0
+    right: 0
+    background-color: white
+
+  &:before,
+  &:after
+    content: ""
+
+  &:before
+    top: -10px
+
+  &:after
+    top: 10px
+
+  .is-active &
+    background-color: rgba(255, 255, 255, 0)
+
+  .is-active &:before
+    transform: translate3d(20%, -70%, 0) rotate(45deg)
+    transform-origin: top left
+
+  .is-active &:after
+    transform-origin: bottom right
+    transform: translate3d(-10%, -600%, 0) rotate(-45deg)
+
+.hamburger-label
+  display: block
+  color: white
+  padding: 0 .25rem
+  margin-top: 34px
+  font-family: $globalFontFamily

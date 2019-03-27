@@ -1,0 +1,39 @@
+.slideout-nav
+  position: fixed
+  top: 80px
+  right: 100%
+  bottom: 0
+  width 90%
+  background-color: white
+  transition: transform 300ms ease-in-out
+  z-index: 11000
+  overflow: hidden
+
+  &.is-active
+    transform: translate3d(100%, 0, 0)
+
+  .headnav-list
+    display: block
+    margin-top: 2rem
+
+  .headnav-list-item
+    padding: 1rem
+    height: auto
+    display: block
+    font-size: 2rem
+
+  .headnav-list-link
+    color: $jsuLogoColor
+
+.blocker
+  position: fixed
+  top: 80px
+  right: 0
+  bottom: 0
+  left: 0
+  transition: background-color 300ms ease-in-out
+  background-color: rgba(0, 0, 0, 0)
+  z-index: 10000
+
+  &.is-active
+    background-color: rgba(0, 0, 0, 0.7)
