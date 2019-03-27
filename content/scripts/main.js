@@ -57,6 +57,17 @@
     }
   }
 
+  function navigate(evnt) {
+    if (evnt.target.pathname === location.pathname && evnt.target.hash) {
+      evnt.preventDefault();
+      setTimeout(function() {
+        location.hash = evnt.target.hash;
+      }, 200);
+    }
+
+    toggleSlideOutNav();
+  }
+
   slideOutNav.className = 'slideout-nav';
   slideOutNav.id = 'slideout-nav';
   slideOutNav.setAttribute('aria-label', 'Main navigation');
@@ -77,4 +88,8 @@
   hamburger.addEventListener('click', toggleSlideOutNav);
   blocker.addEventListener('click', toggleSlideOutNav);
   doc.addEventListener('keyup', closeSlideOutNav);
+
+  [].slice.call(mainNav.getElementsByTagName('a')).forEach(function(anchor) {
+    anchor.addEventListener('click', navigate);
+  });
 })(document);
