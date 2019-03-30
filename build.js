@@ -6,7 +6,7 @@ const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');
 const permalinks = require('metalsmith-permalinks');
 const stylus = require('metalsmith-stylus');
-const assets = require('metalsmith-assets');
+const assets = require( 'metalsmith-assets-improved' );
 
 const devMode = process.argv.includes('--serve');
 
@@ -77,8 +77,8 @@ Metalsmith(__dirname)
   )
   .use(
     assets({
-      source: './theme/assets',
-      destination: './',
+      src: './theme/assets',
+      dest: './',
     })
   )
   .build(function(err) {
