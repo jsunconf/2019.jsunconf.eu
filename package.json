@@ -1,7 +1,7 @@
 {
   "name": "2019.jsunconf.eu",
   "version": "0.0.1",
-  "description": "The 5th edition of the JSUnconf website",
+  "description": "The 6th edition of the JSUnconf website",
   "devDependencies": {
     "jstransformer-pug": "^0.3.0",
     "metalsmith": "^2.3.0",
