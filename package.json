@@ -2,8 +2,15 @@
   "name": "2019.jsunconf.eu",
   "version": "0.0.1",
   "description": "The 5th edition of the JSUnconf website",
+  "main": "index.js",
+  "dependencies": {
+    "ajv": "^6.4.0",
+    "ajv-keywords": "^3.2.0",
+    "eslint": "^4.19.1"
+  },
   "devDependencies": {
     "jstransformer-pug": "^0.3.0",
+    "light-server": "^2.6.0",
     "metalsmith": "^2.3.0",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-browser-sync": "^1.1.1",
@@ -17,18 +24,17 @@
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-publish": "^0.1.5",
-    "metalsmith-serve": "0.0.7",
     "metalsmith-stylus": "^3.0.0",
-    "metalsmith-watch": "^1.0.3",
     "metalsmith-word-count": "0.0.4",
     "moment": "^2.22.1",
     "subfont": "^3.6.2"
   },
   "scripts": {
-    "start": "npm run build -- --serve",
+    "start": "npm run build && npm run server",
     "clean": "rm -rf ./dist",
+    "server": "light-server -s ./dist/ -p 8080 -w 'theme/**/*, content/**/* # npm run build'",
     "prebuild": "npm run clean",
-    "build": "node build.js",
+    "build": "metalsmith",
     "build:prod": "NODE_ENV=production npm run build",
     "postbuild:prod": "npm run subfont && npm run move-404",
     "subfont": "subfont dist -i --inline-css",
