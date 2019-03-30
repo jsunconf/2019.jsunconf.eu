@@ -9,6 +9,7 @@ body
   font-family: $globalFontFamily
   color: $jsuFontColor
   background-color: $jsuBgColor
+  overflow-x: hidden
 
 h1,
 h2,
@@ -117,14 +118,6 @@ a:active
 .onimage
   color: $jsuFontColorOnimage
 
-.grid-01
-  display: grid
-  grid-template-columns: 1fr
-  grid-template-rows: 80px auto
-  grid-template-areas: "header" "main-content"
-  grid-gap: 0
-  overflow-x: hidden
-
 .jsunconflogo
   display: inline-block
 
@@ -136,11 +129,8 @@ a:active
   background-size: 60px 60px
 
 .main-content
-  grid-area: main-content
   padding: 0
-  margin: 0
-  overflow: scroll
-  -webkit-overflow-scrolling: touch
+  margin: 80px 0 0 0
 
 .privacy .main-content
   text-align: left;
