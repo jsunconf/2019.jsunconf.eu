@@ -6,12 +6,8 @@ html
     title JSUnconf 2019
 
     if cdnHost
-      link(rel="dns-prefetch" href=cdnHost)
-      link(rel="preconnect" href=cdnHost)
-    link(rel="dns-prefetch" href="https://cdnjs.cloudflare.com")
-    link(rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin)
-    link(rel="dns-prefetch" href="https://fonts.googleapis.com")
-    link(rel="preconnect" href="https://fonts.googleapis.com" crossorigin)
+      link(rel="preconnect" href=cdnHost crossorigin="anonymous")
+    link(rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous")
 
     meta(name="description" content="JS Unconference 2019 in Hamburg. It's your conference. You decide what will happen.")
     meta(name="keywords" content="2019, unconference, conference, hamburg, js unconference, js, js unconf")
