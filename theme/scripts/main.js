@@ -9,7 +9,6 @@ if (mapCanvas) {
 
 if (contribootMount) {
   Promise.all([
-    import('./modules/contriboot/jsunconf.contriboot.css'),
     import('./modules/contriboot/jsunconf.contriboot'),
   ]).then(() => {}, console.error);
 }
