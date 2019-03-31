@@ -2,6 +2,7 @@ const Bundler = require('parcel-bundler');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const chalk = require('chalk');
 const Metalsmith = require('metalsmith');
 const serve = require('metalsmith-serve');
 const watch = require('metalsmith-watch');
@@ -9,8 +10,7 @@ const metadata = require('metalsmith-metadata');
 const layouts = require('metalsmith-layouts');
 const markdown = require('metalsmith-markdown');
 const permalinks = require('metalsmith-permalinks');
-const stylus = require('metalsmith-stylus');
-const assets = require( 'metalsmith-assets-improved' );
+const assets = require('metalsmith-assets-improved');
 
 const devMode = process.argv.includes('--serve');
 
@@ -33,22 +33,32 @@ const netlifyUrlPrefix = process.env.REVIEW_ID
   : '';
 const netlifyUrl = `https://${netlifyUrlPrefix}amazing-hodgkin-d968dc.netlify.com`;
 const cdnHost = devMode ? '' : netlifyUrl;
-const parcelEntry = path.join(__dirname, 'theme', 'scripts', 'main.js');
+const parcelJsEntry = path.join(__dirname, 'theme', 'static', 'main.js');
+const parcelCssEntry = path.join(__dirname, 'theme', 'static', 'main.styl');
 const parcelOptions = {
-  outDir: './dist/scripts',
-  outFile: 'main.js',
-  publicUrl: `${cdnHost}/`,
+  outDir: './dist/static',
+  cacheDir: '.cache',
+  publicUrl: `${cdnHost}/static`,
   watch: devMode,
   cache: true,
-  cacheDir: '.cache',
   contentHash: true,
   minify: !devMode,
-  logLevel: 3,
+  logLevel: 0,
   hmr: false,
   detailedReport: false,
 };
 
-const parcelPlugin = ({ entry, options, dev }) => {
+/**
+ * Creates an instance of the parcel bundler for compiling Javascript & Stylus. Supports watch-mode.
+ *
+ * @param {Object} opts
+ * @param {string|string[]} opts.entry - path(s) of the entry file(s)
+ * @param {Object} opts.options - the parcel options object (https://parceljs.org/api.html)
+ * @param {boolean} opts.dev - Whether the scripts currently runs in dev-mode
+ */
+const parcel = ({ entry, options, dev }) => {
+  const prefix = chalk.magenta('[parcel]');
+  const log = (str) => dev && console.log(prefix, str);
   let initialized = null;
 
   const plugin = (_, __, done) => {
@@ -60,46 +70,64 @@ const parcelPlugin = ({ entry, options, dev }) => {
 
     const bundler = new Bundler(entry, options);
     bundler.bundle();
+    log(`Bundling...`);
+    bundler.on('buildEnd', () => log('Bundle is ready.'));
+    bundler.on('buildError', (err) => log(`Error: ${err.message}`));
 
     if (dev) {
-      setImmediate(done);
+      done();
     } else {
-      bundler.on('buildEnd', done);
+      bundler.on('bundled', () => done());
     }
   };
 
   return plugin;
 };
 
-const fingerprintMainJsPlugin = ({ dev }) => (_, metalsmith, done) => {
+/**
+ * Creates a MD5 contenthash for a given file
+ * and includes it into the filename.
+ *
+ * @param {Object} opts
+ * @param {string} opts.src - path of the relative to the ./dist folder
+ * @param {string} opts.identifier - name of the property that is used to store the resulting file
+ *                                   path on the metadata object for use in the template.
+ * @param {boolean} opts.dev - Whether the scripts currently runs in dev-mode
+ */
+const fingerprint = (opts) => (_, metalsmith, done) => {
+  const { src, identifier, dev } = opts;
   const metadata = metalsmith.metadata();
-  let newFileUri = 'scripts/main.js';
+  const fileBasename = path.basename(src);
+  const dest = path.dirname(src);
+  let newFileUri = src;
 
   if (!dev) {
-    const dir = path.join(__dirname, 'dist', 'scripts');
-    const filePath = path.join(dir, 'main.js');
-    const mainJs = fs.readFileSync(filePath, 'utf8');
-    const hash = md5(mainJs);
-    const filename = `main.${hash}.js`;
+    const dist = path.join(__dirname, 'dist');
+    const filePath = path.join(dist, src);
+    const content = fs.readFileSync(filePath, 'utf8');
+    const hash = md5(content);
+    const filename = fileBasename.replace(/\.([^.]+)$/, `.${hash}.$1`);
     const mapFilename = `${filename}.map`;
-    const newFilePath = path.join(dir, filename);
-    newFileUri = `scripts/${filename}`;
+    const newFilePath = path.join(dist, dest, filename);
+    newFileUri = path.join(dest, filename);
 
     fs.writeFileSync(
       newFilePath,
-      mainJs.replace('main.js.map', mapFilename),
+      content.replace(`${fileBasename}.map`, mapFilename),
       'utf8'
     );
     fs.writeFileSync(
-      path.join(dir, mapFilename),
-      fs.readFileSync(path.join(dir, 'main.js.map'), 'utf8'),
+      path.join(dist, dest, mapFilename),
+      fs.readFileSync(`${filePath}.map`, 'utf8'),
       'utf8'
     );
+    fs.unlinkSync(filePath);
+    fs.unlinkSync(`${filePath}.map`);
   }
 
   metalsmith.metadata({
     ...metadata,
-    mainJs: `${cdnHost}/${newFileUri}`,
+    [identifier]: `${cdnHost}/${newFileUri}`,
   });
   done();
 };
@@ -116,9 +144,8 @@ Metalsmith(__dirname)
     whenDev(watch, {
       paths: {
         '${source}/**/*.md': true,
-        '${source}/**/*.yaml': '**/*',
-        '${source}/**/*.js': '**/*',
-        'theme/**/*': '**/*',
+        '${source}/**/*.yaml': `**/*`,
+        'theme/**/*': `**/*`,
       },
       livereload: true,
     })
@@ -144,26 +171,29 @@ Metalsmith(__dirname)
     })
   )
   .use(
-    stylus({
-      compress: !devMode,
-      paths: ['theme/styles'],
-    })
-  )
-  .use(
-    parcelPlugin({
-      entry: parcelEntry,
+    parcel({
+      entry: [parcelJsEntry, parcelCssEntry],
       options: parcelOptions,
       dev: devMode,
     })
   )
   .use(
     assets({
-      src: './theme/assets',
-      dest: './',
+      src: './theme/images',
+      dest: './images',
     })
   )
   .use(
-    fingerprintMainJsPlugin({
+    fingerprint({
+      src: 'static/main.js',
+      identifier: 'mainJs',
+      dev: devMode,
+    })
+  )
+  .use(
+    fingerprint({
+      src: 'static/main.css',
+      identifier: 'mainCss',
       dev: devMode,
     })
   )
