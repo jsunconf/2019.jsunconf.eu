@@ -45,6 +45,7 @@ const navigate = (evnt) => {
   toggleSlideOutNav();
 };
 
+mainNav.removeAttribute('id');
 slideOutNav.className = 'slideout-nav';
 slideOutNav.id = 'slideout-nav';
 slideOutNav.setAttribute('aria-label', 'Main navigation');
