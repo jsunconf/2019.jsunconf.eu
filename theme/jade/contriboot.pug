@@ -1,5 +1,8 @@
 extends _layout
 
+block header
+  include index-partials/header
+
 block main
   section.section.contriboot-headline
     header.section__header
@@ -10,4 +13,4 @@ block main
   section.section.section__content
     .mount
 
-  script(src=cdnHost + "/scripts/contriboot.js")
+  script(src=cdnHost + "/scripts/jsunconf.contriboot.js")
