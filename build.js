@@ -158,8 +158,10 @@ Metalsmith(__dirname)
   )
   .use(
     assets({
-      src: './theme/assets',
-      dest: './',
+      src: './theme/images',
+      dest: './images',
+    })
+  )
     })
   )
   .use(
