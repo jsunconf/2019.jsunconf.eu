@@ -109,7 +109,7 @@ textarea,
     & h3
       color: #8f237f
     &:hover,&:focus
-      background-color: rgba(0, 0, 0, 0)
+      background-color: rgba(black, 0)
 
   &:hover, &:focus, &--active
     border-radius: 4px
@@ -204,8 +204,6 @@ textarea,
 }
 
 .react-spinner_bar {
-  -webkit-animation: react-spinner_spin 1.2s linear infinite;
-  -moz-animation: react-spinner_spin 1.2s linear infinite;
   animation: react-spinner_spin 1.2s linear infinite;
   border-radius: 5px;
   background-color: #911C80;
@@ -217,16 +215,6 @@ textarea,
 }
 
 @keyframes react-spinner_spin {
- 0% { opacity: 1; }
- 100% { opacity: 0.15; }
-}
-
-@-moz-keyframes react-spinner_spin {
- 0% { opacity: 1; }
- 100% { opacity: 0.15; }
-}
-
-@-webkit-keyframes react-spinner_spin {
  0% { opacity: 1; }
  100% { opacity: 0.15; }
 }
