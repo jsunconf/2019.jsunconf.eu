@@ -24,6 +24,7 @@
     "metalsmith-watch": "^1.0.3",
     "metalsmith-word-count": "0.0.4",
     "moment": "^2.22.1",
+    "parcel-bundler": "^1.12.3",
     "subfont": "^3.6.2"
   },
   "scripts": {
