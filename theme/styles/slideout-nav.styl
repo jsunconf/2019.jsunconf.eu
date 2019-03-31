@@ -1,0 +1,30 @@
+.slideout-nav
+  position: fixed
+  top: 80px
+  right: 100%
+  bottom: 0
+  width 100%
+  background-color: white
+  transition: transform 200ms ease-in-out
+  z-index: 11000
+  overflow: hidden
+
+  &.is-active
+    transform: translate3d(100%, 0, 0)
+
+  .headnav-list
+    display: flex
+    padding: 1rem 0
+    box-sizing: border-box
+    flex-direction: column
+    justify-content: space-evenly
+
+  .headnav-list-item
+    height: auto
+    display: block
+
+    @media screen and (min-width: 762px)
+      font-size: 2rem
+
+  .headnav-list-link
+    color: $jsuLogoColor

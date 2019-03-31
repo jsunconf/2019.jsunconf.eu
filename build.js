@@ -36,7 +36,9 @@ Metalsmith(__dirname)
   .use(
     whenDev(watch, {
       paths: {
-        '${source}/**/*': true,
+        '${source}/**/*.md': true,
+        '${source}/**/*.yaml': '**/*',
+        '${source}/**/*.js': '**/*',
         'theme/**/*': '**/*',
       },
       livereload: true,

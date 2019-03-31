@@ -46,10 +46,10 @@ html
     link(href=cdnHost + '/styles/main.css' rel='stylesheet' type='text/css')
     link(href=cdnHost + "/scripts/jsunconf.contriboot.css" rel='stylesheet' type='text/css')
 
-  body(class=bodyClass + ' grid-01')
+  body(class=(bodyClass || ''))
     block header
 
-    .main-content
+    main.main-content
       block main
 
       block sponsors

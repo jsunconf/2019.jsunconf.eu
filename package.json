@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "The 6th edition of the JSUnconf website",
   "devDependencies": {
+    "autoprefixer": "^9.5.0",
     "jstransformer-pug": "^0.3.0",
     "metalsmith": "^2.3.0",
     "metalsmith-assets-improved": "^1.0.1",
@@ -16,6 +17,7 @@
     "metalsmith-markdown": "^1.2.0",
     "metalsmith-metadata": "0.0.4",
     "metalsmith-permalinks": "^2.2.0",
+    "metalsmith-postcss": "^4.2.0",
     "metalsmith-publish": "^0.1.5",
     "metalsmith-serve": "0.0.7",
     "metalsmith-stylus": "^3.0.0",
