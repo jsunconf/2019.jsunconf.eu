@@ -31,13 +31,27 @@
   align-items: center
   width: 100%
   min-height: 70vh
+  overflow: hidden
+  position: relative
+  z-index: 0
+
+.image-section-img
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
   background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/outsidehof.jpg")
   background-repeat: no-repeat
   background-size: cover
   background-position: center
-  overflow: hidden
+
   @media(max-width: 1000px)
     background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/outsidehof-1000.jpg")
+
+.image-section-content
+  position: relative
+  z-index: 1
 
 .main-heading
   font-size: 3rem

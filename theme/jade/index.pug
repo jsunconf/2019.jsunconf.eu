@@ -4,10 +4,12 @@ block header
   include index-partials/header
 
 block main
-  .image-section(alt="View on the beautiful Hamburg port area with Elphie in sight, from the Michel, an ancient churches bell tower.", title="View on the beautiful Hamburg port area with Elphie in sight, from the Michel, an ancient churches bell tower.").hero-image
-    a(href="index.html")
-      img(alt="JSUnconf logo graphic. Purple shape with white JS UNCONF wordmark.",title="JSUnconf logo graphic. Purple shape with white wordmark.",src="/images/jsunconflogo.svg",width="100rem")
-    h1.onimage.main-heading JSUnconf<br> 13. + 14.4.2019<br> Hamburg
+  .image-section
+    .image-section-img(role="img", aria-label="View on the beautiful Hamburg port area with Elphie in sight, from the Michel, an ancient churches bell tower.").hero-image
+    .image-section-content
+      a(href="index.html")
+        img(alt="JSUnconf logo graphic. Purple shape with white JS UNCONF wordmark.",title="JSUnconf logo graphic. Purple shape with white wordmark.",src="/images/jsunconflogo.svg",width="100rem")
+      h1.onimage.main-heading JSUnconf<br> 13. + 14.4.2019<br> Hamburg
 
   include index-partials/description
   //- include index-partials/schedule
