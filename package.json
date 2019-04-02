@@ -25,7 +25,8 @@
     "parcel-bundler": "^1.12.3",
     "postcss-modules": "^1.4.1",
     "stylus": "^0.54.5",
-    "subfont": "^3.6.2"
+    "subfont": "^3.6.2",
+    "vanilla-lazyload": "^11.0.6"
   },
   "scripts": {
     "start": "npm run build -- --serve",

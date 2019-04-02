@@ -69,10 +69,13 @@ const parcel = ({ entry, options, dev }) => {
     initialized = true;
 
     const bundler = new Bundler(entry, options);
-    bundler.bundle();
+    bundler.bundle().catch(() => {});
     log(`Bundling...`);
     bundler.on('buildEnd', () => log('Bundle is ready.'));
-    bundler.on('buildError', (err) => log(`Error: ${err.message}`));
+    bundler.on('buildError', (err) => {
+      log(`Error: ${err.message}\n`);
+      log(err.stack);
+    });
 
     if (dev) {
       done();
