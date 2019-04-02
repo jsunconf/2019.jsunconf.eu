@@ -1,5 +1,9 @@
+import LazyLoad from 'vanilla-lazyload';
+
 const MAPBOX_SCRIPT_URL =
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.4/mapbox-gl.js';
+const MAPBOX_STYLES_URL =
+  'https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.4/mapbox-gl.css';
 
 const initMap = (mapCanvas) => {
   mapboxgl.accessToken =
@@ -106,10 +110,25 @@ const initMap = (mapCanvas) => {
   );
 };
 
+const addElem = (name, attrs) =>
+  document.head.appendChild(Object.assign(document.createElement(name), attrs));
+
+const loadMapAssets = (mapCanvas) => {
+  addElem('link', {
+    href: MAPBOX_STYLES_URL,
+    rel: 'stylesheet',
+    type: 'text/css',
+  });
+  addElem('script', {
+    src: MAPBOX_SCRIPT_URL,
+    onload: () => initMap(mapCanvas),
+  });
+};
+
 export const mapBox = (mapCanvas) =>
-  document.head.appendChild(
-    Object.assign(document.createElement('script'), {
-      src: MAPBOX_SCRIPT_URL,
-      onload: () => initMap(mapCanvas),
-    })
+  new LazyLoad(
+    {
+      callback_enter: () => loadMapAssets(mapCanvas),
+    },
+    [mapCanvas]
   );
