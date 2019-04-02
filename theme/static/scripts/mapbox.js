@@ -1,5 +1,9 @@
+import LazyLoad from 'vanilla-lazyload';
+
 const MAPBOX_SCRIPT_URL =
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.4/mapbox-gl.js';
+const MAPBOX_STYLES_URL =
+  'https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.4/mapbox-gl.css';
 
 const initMap = (mapCanvas) => {
   mapboxgl.accessToken =
@@ -45,17 +49,19 @@ const initMap = (mapCanvas) => {
       //         type: 'Point',
       //         coordinates: [9.9243693, 53.5517547]
       //     }
-      // }, {
-      //     type: 'Feature',
-      //     properties: {
-      //         'marker-symbol': 'bar',
-      //         description: '<strong>Good Old Days</strong><br />Max-Brauer-Allee 275<br />22769 Hamburg<br /><br />Saturday, April 21st 2018<br />Starting at 20h<br /><br /><a href="https://www.google.de/maps/place/Good+Old+Days+Dance+Bar/@53.563565,9.9570948,17z/data=!3m1!4b1!4m2!3m1!1s0x47b18f42d354b6e7:0x2409f6f2f52cd803" target="_blank" title="Navigate">&raquo; Navigate here</a>'
-      //     },
-      //     geometry: {
-      //         type: 'Point',
-      //         coordinates: [9.95911, 53.5635]
-      //     }
-      // }
+      // },
+      {
+        type: 'Feature',
+        properties: {
+          'marker-symbol': 'bar',
+          description:
+            '<strong>HÄKKEN</strong><br />Spielbudenplatz 21-22<br />20359 Hamburg<br /><br />Saturday, April 13th 2019<br />Starting at 20h<br /><br /><a href="https://goo.gl/maps/Wnm4BKFmYW32" target="_blank" title="Navigate">&raquo; Navigate here</a>',
+        },
+        geometry: {
+          type: 'Point',
+          coordinates: [9.96413588, 53.5491168],
+        },
+      },
     ],
   };
 
@@ -104,10 +110,27 @@ const initMap = (mapCanvas) => {
   );
 };
 
+const addElem = (name, attrs) =>
+  document.head.appendChild(Object.assign(document.createElement(name), attrs));
+
+const loadMapAssets = (mapCanvas) => {
+  const onload = setTimeout(() => initMap(mapCanvas), 100);
+
+  addElem('link', {
+    href: MAPBOX_STYLES_URL,
+    rel: 'stylesheet',
+    type: 'text/css',
+  });
+  addElem('script', {
+    src: MAPBOX_SCRIPT_URL,
+    onload,
+  });
+};
+
 export const mapBox = (mapCanvas) =>
-  document.head.appendChild(
-    Object.assign(document.createElement('script'), {
-      src: MAPBOX_SCRIPT_URL,
-      onload: () => initMap(mapCanvas),
-    })
+  new LazyLoad(
+    {
+      callback_enter: () => loadMapAssets(mapCanvas),
+    },
+    [mapCanvas]
   );
