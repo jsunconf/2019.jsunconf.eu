@@ -1,3 +1,13 @@
+gradient = linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha))
+
+backgroundImage(small, big)
+  background-image: gradient
+  &.is-active
+    background-image: gradient, url(small)
+    @media(max-width: 1000px)
+      background-image: gradient, url(big)
+
+
 .section
   padding: 6vh 1rem 12vh 1rem
 
@@ -41,13 +51,10 @@
   right: 0
   bottom: 0
   left: 0
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/outsidehof.jpg")
   background-repeat: no-repeat
   background-size: cover
   background-position: center
-
-  @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/outsidehof-1000.jpg")
+  backgroundImage("../images/outsidehof.jpg", "../images/outsidehof-1000.jpg")
 
 .image-section-content
   position: relative
@@ -61,36 +68,24 @@
 
 .hero-image
   min-height: calc(100vh - 80px);
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/background-2000.jpg")
+  background-image: gradient, url("../images/background-2000.jpg")
   @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/background-1000.jpg")
+    background-image: gradient, url("../images/background-1000.jpg")
 
 .motive-001
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/everyone.jpg")
-  @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/everyone-1000.jpg")
+  backgroundImage("../images/everyone.jpg", "../images/everyone-1000.jpg")
 
 .motive-002
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/onesies.jpg")
-  @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/onesies-1000.jpg")
+  backgroundImage("../images/onesies.jpg", "../images/onesies-1000.jpg")
 
 .motive-003
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/stage.jpg")
-  @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/stage-1000.jpg")
+  backgroundImage("../images/stage.jpg", "../images/stage-1000.jpg")
 
 .motive-004
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/speakerstage.jpg")
-  @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/speakerstage-1000.jpg")
+  backgroundImage("../images/speakerstage.jpg", "../images/speakerstage-1000.jpg")
 
 .motive-005
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/attentivecrowd.jpg")
-  @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/attentivecrowd-1000.jpg")
+  backgroundImage("../images/attentivecrowd.jpg", "../images/attentivecrowd-1000.jpg")
 
 .motive-006
-  background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/outside.jpg")
-  @media(max-width: 1000px)
-    background-image: linear-gradient(29deg, var(--darkish-purple-alpha), var(--something-alpha) 85%, var(--ocean-blue-alpha)), url("../images/outside-1000.jpg")
+  backgroundImage("../images/outside.jpg", "../images/outside-1000.jpg")
