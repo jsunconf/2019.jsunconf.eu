@@ -22,6 +22,7 @@
     "metalsmith-watch": "^1.0.3",
     "metalsmith-word-count": "0.0.4",
     "moment": "^2.22.1",
+    "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.12.3",
     "postcss-modules": "^1.4.1",
     "stylus": "^0.54.5",
