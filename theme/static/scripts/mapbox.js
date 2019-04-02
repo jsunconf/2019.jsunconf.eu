@@ -114,6 +114,8 @@ const addElem = (name, attrs) =>
   document.head.appendChild(Object.assign(document.createElement(name), attrs));
 
 const loadMapAssets = (mapCanvas) => {
+  const onload = setTimeout(() => initMap(mapCanvas), 100);
+
   addElem('link', {
     href: MAPBOX_STYLES_URL,
     rel: 'stylesheet',
@@ -121,7 +123,7 @@ const loadMapAssets = (mapCanvas) => {
   });
   addElem('script', {
     src: MAPBOX_SCRIPT_URL,
-    onload: () => initMap(mapCanvas),
+    onload,
   });
 };
 
