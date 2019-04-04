@@ -1,22 +1,29 @@
 .section--schedule
-  .schedules-container
-    justify-content: space-around
-    display: flex
+  @media screen and (min-width: 762px)
+    padding-right: 10vw
+    padding-left: 10vw
+  @media screen and (min-width: 1400px)
+    padding-right: 20vw
+    padding-left: 20vw
 
-    @media $mediaQuerySmall
-      flex-direction: column
+.schedules-container
+  justify-content: space-around
+  display: flex
 
-  .schedule-line:nth-child(2n+1)
-    background-color: var(--dark-plum)
+  @media $mediaQuerySmall
+    flex-direction: column
 
-  .schedule-line
-    padding: 5px 10px
-    text-align: left
+.schedule-line:nth-child(2n+1)
+  background-color: $jsuLogoColor
+  color: white
 
-  .schedule__time
-    opacity: 0.7
+.schedule-line
+  padding: 5px 10px
+  text-align: left
 
-  .schedule
-    padding: 5px
+.schedule__time
+  opacity: 0.7
 
-    
+.schedule-col
+  padding: 5px
+
