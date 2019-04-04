@@ -41,7 +41,7 @@ const parcelOptions = {
   publicUrl: `${cdnHost}/static`,
   watch: devMode,
   cache: true,
-  contentHash: true,
+  contentHash: !devMode,
   minify: !devMode,
   logLevel: 0,
   hmr: false,

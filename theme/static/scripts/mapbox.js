@@ -112,17 +112,15 @@ const initMap = (mapCanvas) => {
 };
 
 const loadMapAssets = (mapCanvas) => {
-  const onload = setTimeout(() => initMap(mapCanvas), 100);
+  const onload = () => initMap(mapCanvas);
+  const script = addElem('script', { onload });
 
   addElem('link', {
     href: MAPBOX_STYLES_URL,
     rel: 'stylesheet',
     type: 'text/css',
   });
-  addElem('script', {
-    src: MAPBOX_SCRIPT_URL,
-    onload,
-  });
+  script.src = MAPBOX_SCRIPT_URL;
 };
 
 export const mapBox = (mapCanvas) =>
