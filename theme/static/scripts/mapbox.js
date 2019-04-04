@@ -1,4 +1,5 @@
 import LazyLoad from 'vanilla-lazyload';
+import { addElem } from './util';
 
 const MAPBOX_SCRIPT_URL =
   'https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.4/mapbox-gl.js';
@@ -109,9 +110,6 @@ const initMap = (mapCanvas) => {
     )
   );
 };
-
-const addElem = (name, attrs) =>
-  document.head.appendChild(Object.assign(document.createElement(name), attrs));
 
 const loadMapAssets = (mapCanvas) => {
   const onload = setTimeout(() => initMap(mapCanvas), 100);
