@@ -1,0 +1,22 @@
+- var formId = "562adf61069508a950eb241c9";
+- var audienceId = "9051d91c6d";
+
+form.newsletter-form(action="https://jsunconf.us11.list-manage.com/subscribe/post?u=" + formId + "&id=" + audienceId, method="post", name="mc-embedded-subscribe-form", target="_blank", novalidate="true")
+  fieldset.newsletter-form-inner#mc_embed_signup_scroll
+    legend.newsletter-caption
+      | Sign up to our newsletter
+      a(href="#newsletter-legal-note")
+        sup *1
+
+    //- real people should not fill this in and expect good things
+    //- do not remove this or risk form bot signups
+    div.zuckerschuessel(aria-hidden="true")
+      input(type="text", name="b_" + formId + "_" + audienceId, tabindex="-1", value="")
+
+    .newsletter-form-content
+
+      .newsletter-input-wrapper
+        label.visually-hidden(for="newsletter-input") Email address
+        input.newsletter-input#newsletter-input(type="email", name="EMAIL", placeholder="Enter your email address", required="true")
+
+      button.newsletter-button(name="subscribe") Subscribe

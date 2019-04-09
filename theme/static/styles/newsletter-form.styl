@@ -1,0 +1,53 @@
+.newsletter-form
+  display: block
+  margin: 2rem auto 0 auto
+  max-width: 808px
+  overflow: hidden
+
+.newsletter-form-inner
+  padding: 0 1rem
+
+.newsletter-caption
+  display: block
+  width: 100%
+  margin-bottom: 2rem
+  font-size: 1.1rem
+  font-weight: 700
+
+  @media screen and (min-width: 401px)
+    font-size: 1.4rem
+
+  @media screen and (min-width: 762px)
+    font-size: 1.6rem
+
+.zuckerschuessel
+  position: absolute
+  left: -5000px
+
+.newsletter-form-content
+  @media screen and (min-width: 762px)
+    width: 100%
+    display: flex
+    justify-content: space-evenly
+
+.newsletter-input-wrapper
+  margin-bottom: 1rem
+
+  @media screen and (min-width: 762px)
+    margin-right: 1rem
+    margin-bottom: auto
+    flex-grow: 1
+
+.newsletter-input
+  width: 100%
+  padding: 1em .6em
+  box-sizing: border-box
+  font-size: 1rem
+
+.newsletter-button
+  @extends .button
+  display: block
+  width: 100%
+
+  @media screen and (min-width: 762px)
+    width: auto
